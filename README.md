@@ -1,3 +1,3 @@
 # What is this project ?
 
-Textual game based on the old books "Défis fantastiques".
+A textual-game based on 'the book with wich YOU are the Hero' wich work with a hand-made json librairie with all the events of the book/game.
