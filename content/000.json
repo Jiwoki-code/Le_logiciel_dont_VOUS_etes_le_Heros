@@ -1,0 +1,10 @@
+{
+    "id": "000",
+    "text": "hello world",
+    "choices": [
+        {
+            "text":"test",
+            "next":"001"
+        }
+    ]
+}

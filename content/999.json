@@ -1,0 +1,14 @@
+{
+    "id": "999",
+    "text": "Oups ! Une erreur est survenu..",
+    "choices": [
+        {
+            "text":"Revenir en arrière",
+            "next":"001"
+        },
+        {
+            "text":"Charger un code triche",
+            "next":"998"
+        }
+    ]
+}

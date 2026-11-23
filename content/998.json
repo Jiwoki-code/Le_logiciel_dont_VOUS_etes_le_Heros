@@ -1,0 +1,10 @@
+{
+    "id": "998",
+    "text": "Entrer le code triche de votre choix",
+    "choices": [
+        {
+            "text":"...",
+            "next":"999"
+        }
+    ]
+}
