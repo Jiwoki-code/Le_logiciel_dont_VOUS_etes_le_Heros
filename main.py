@@ -7,65 +7,13 @@
 
 # ###################################################################################
 
-import os
-from components.character import Character
-from components.managers.file_manager import JSON_file
-
-
-HELP_FILE, CHEAT_FILE, ERROR_FILE = JSON_file.GET_BASIC_FILES()
-display: str = "hello world" # display all informations
-INTERCATIONS_WORDS = ["inventaire","help","aide","123456789"]
+from components.core.game import Game
 
 # ###################################################################################
 
-def get_player_input(player_input: str): # safly get user input
-    if player_input == "":
-        return 1
-    if player_input.lower() in "help":
-        return 2
-    if player_input.lower() in "inventory":
-        return 3
-    if player_input in "123456789" and len(player_input) <= 1:
-        if int(player_input) - 1 < len(current_event.choices): # checking if the choice existe
-            return 4
-    if not player_input.lower() in INTERCATIONS_WORDS:
-        print("Commande not founded. Type 'help' to show commande list")
-        return 5
+def main():
+    game = Game()
+    game.start()
 
-def get_choice_id(choice_index: int): # get the id of the next event
-    if choice_index - 1 < current_event.number_of_choices():
-        return current_event.choices[choice_index-1]["next"]
-    else: # error in json files
-        return "999"
-
-def interact(player_input:str, current_event: JSON_file):
-    _player_input = get_player_input(player_input)
-    match _player_input:
-        case 1:
-            return current_event.display(), current_event
-        case 2:
-            return HELP_FILE.display(), current_event
-        case 3:
-            return ERROR_FILE.display(), current_event
-        case 4: # load json file corresponding to choice index
-            new_event = JSON_file.load_JSON(get_choice_id(int(player_input)))
-            return new_event.display(), new_event
-        case 5:
-            return HELP_FILE.display(), current_event
-
-# ###################################################################################
-
-current_event = JSON_file.load_JSON("000")
-
-display = current_event.display()
-
-test_routine: int = 10
-while test_routine > 0:
-
-    player_input = input(" > ")
-    display, new_event = interact(player_input, current_event)
-    current_event = new_event
-    os.system("clear")
-    print(display)
-
-    test_routine -= 1
+if __name__ == "__main__":
+    main()

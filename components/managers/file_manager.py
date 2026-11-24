@@ -26,10 +26,11 @@ class JSON_file: # represent an event
     def display(self): # return a string to concatenate with 'display' variable
         index = 1
         display: str = ""
-        display += "\n" + self.text + "\n"
+        display += "\n" + self.text + "\n" + "\n"
         for choice in self.choices:
             display += f"    {index} - {choice["text"]}\n"
             index += 1
+        print(display)
         return display
 
     def available_choices_list(self): # return list of choices
@@ -55,7 +56,7 @@ class JSON_file: # represent an event
             print(f"load_JSON: JSON file not founded!")
             return None
         else:
-            print(f"{file_id}.json loaded!")
+            # print(f"{file_id}.json loaded!")
             return json_file
 
     def GET_BASIC_FILES():
