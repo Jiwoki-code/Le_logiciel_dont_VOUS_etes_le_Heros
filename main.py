@@ -8,49 +8,13 @@
 # ###################################################################################
 
 import os
+from components.character import Character
 from components.managers.file_manager import JSON_file
+
 
 HELP_FILE, CHEAT_FILE, ERROR_FILE = JSON_file.GET_BASIC_FILES()
 display: str = "hello world" # display all informations
 INTERCATIONS_WORDS = ["inventaire","help","aide","123456789"]
-
-# ###################################################################################
-
-class Character:
-    def __init__(self, name: str, habilite: int, endurence: int, luck: int, damages: int, magic: int,
-                  magic_words: list, gold: int, items:list):
-        self.name=name
-        self.habilite=habilite
-        self.endurence=endurence
-        self.luck=luck
-        self.damages=damages
-        self.magic=magic
-        self.magic_words=magic_words
-        self.gold=gold
-        self.items=items
-
-    def __str__(self):
-        return f"Name:{self.name}\nHabilite:{self.habilite}\nEndurence:{self.endurence}\nLuck{self.luck}\nMagic:{self.magic}\n{self.magic_words}\nGold:{self.gold}\nItems:{self.items}"
-
-    def is_dead(self):
-        return self.endurence <= 0
-
-    def take_damage(self, amount: int):
-        self.endurence-=amount
-
-class Monster:
-    def __init__(self, name, habilite, endurence, damages, loot):
-        self.name=name
-        self.habilite=habilite
-        self.endurence=endurence
-        self.damages=damages
-        self.loot=loot
-
-    def is_dead(self):
-        return self.endurence <= 0
-
-    def take_damage(self, amount: int):
-        self.endurence-=amount
 
 # ###################################################################################
 
@@ -80,14 +44,14 @@ def interact(player_input:str, current_event: JSON_file):
         case 1:
             return current_event.display(), current_event
         case 2:
-            return JSON_file.HELP_FILE.display(), current_event
+            return HELP_FILE.display(), current_event
         case 3:
-            return JSON_file.ERROR_FILE.display(), current_event
+            return ERROR_FILE.display(), current_event
         case 4: # load json file corresponding to choice index
             new_event = JSON_file.load_JSON(get_choice_id(int(player_input)))
             return new_event.display(), new_event
         case 5:
-            return JSON_file.HELP_FILE.display(), current_event
+            return HELP_FILE.display(), current_event
 
 # ###################################################################################
 
