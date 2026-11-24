@@ -1,9 +1,9 @@
 {
     "id": "997",
-    "text": "HELP ME",
+    "text": "Available commands..\nwhen exploring around: \n\n    - help: show help\n    - quit: quit the game\n    - inventory: display inventory\n    - 1 2 3 4 5..: pick a choice\n\nin combat:\n\n    - enter: continue",
     "choices": [
         {
-            "text":"ptrrrrrs enter to continue..",
+            "text":"Press enter to continue..",
             "next":"999"
         }
     ]
