@@ -3,16 +3,17 @@
 import os
 from components.managers.file_manager import JSON_file # type: ignore
 from components.character import Character, Monster, Player # type: ignore
+from components.systems.combat import Combat # type: ignore
 
 # ###################################################################################
 
 class Game:
     def __init__(self):
         # data
-        self.player=None
+        self.player=Player("glavio",10,10,2,1,1,[],1,[])
         self.current_event=None
         # game state
-        self.state:str="exploration"
+        self.state:str="combat" # exploration/combat/menu
         self.running:bool=False
         self.display:str=""
         # ressources
@@ -34,7 +35,7 @@ class Game:
         elif player_input.lower() in "quit":
             self.running=False
         elif player_input.lower() in "help":
-            self.HELP_FILE.display()
+            pass #self.HELP_FILE.display()
         elif player_input.lower() in "inventory":
             pass # display_inventory
         elif player_input in "123456789" and len(player_input) <= 1:
@@ -52,10 +53,9 @@ class Game:
         os.system("clear")
         self.get_player_input(player_input)
         
-    def combat_loop():
-        # combat = Combat(ally:list, monster:list)
-        # combat.start()
-        pass
+    def combat_loop(self):
+        combat = Combat(self.player,Monster("Goblin",10,10,2,[]))
+        combat.start()
 
     def game_loop(self):
         while self.running:
