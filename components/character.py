@@ -1,5 +1,9 @@
 # ###################################################################################
 
+import random
+
+# ###################################################################################
+
 class Character:
     def __init__(self, name:str, habilite:int, endurence:int, damages:int):
         self.name=name
@@ -37,6 +41,17 @@ class Player(Character):
     def __str__(self):
         return f"Name:{self.name}\nHabilite:{self.habilite}\nEndurence:{self.endurence}\nLuck{self.luck}\nMagic:{self.magic}\nMagic_words:{self.magic_words}\nGold:{self.gold}\nItems:{self.items}"
 
+    def get_lucky(self):
+        luck_id:int
+        luck_test:int=random.randint(1,6) + random.randint(1,6)
+        if luck_test <= self.luck:
+            luck_id=1
+        else:
+            luck_id=2
+
+        self.luck-=1
+        return luck_id
+    
 class Monster(Character):
     def __init__(self,name: str, habilite: int, endurence: int, damages: int, loot):
         super().__init__(name, habilite, endurence, damages)

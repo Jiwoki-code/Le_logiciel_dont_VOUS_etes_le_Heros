@@ -1,10 +1,15 @@
 {
     "id": "001",
-    "text": "test",
+    "text": "Vous apperssevez des goblins pas très malins qui vous tendent une embuscade au loin.",
     "choices": [
         {
-            "text":"test2",
-            "next":"002"
+            "text":"Combatre les goblins",
+            "next":"002",
+            "combat":["Goblin",10,10,2,[]]
+        },
+        {
+            "text":"Essayer de les monté les uns contre les autres",
+            "next":"003"
         }
     ]
 }

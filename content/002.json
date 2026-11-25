@@ -1,9 +1,9 @@
 {
     "id": "002",
-    "text": "test2",
+    "text": "Vous trionpher des Goblins !",
     "choices": [
         {
-            "text":"test1",
+            "text":"continuer votre route",
             "next":"001"
         }
     ]

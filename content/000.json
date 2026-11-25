@@ -1,9 +1,9 @@
 {
     "id": "000",
-    "text": "hello world",
+    "text": "    Introduction de la situtations et des différents entagonistes..",
     "choices": [
         {
-            "text":"test",
+            "text":"continuer",
             "next":"001"
         }
     ]
