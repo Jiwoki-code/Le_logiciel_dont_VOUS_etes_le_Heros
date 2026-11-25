@@ -31,7 +31,7 @@ class Combat:
         monster_habilite_test = random.randint(1,6) + random.randint(1,6)
         player_test_result = self.player.habilite + player_habilite_test
         monster_test_result = self.enemy.habilite + monster_habilite_test
-        player_is_in_good_pos:bool
+        player_is_in_good_pos:int
 
         time.sleep(.7)
         print(f"Vous lancez les dées et réalisez {player_habilite_test} à votre test d'habilité!")
@@ -48,31 +48,36 @@ class Combat:
         print("")
         if monster_test_result < player_test_result:
             print("Vous prenez l'avantage dans l'échange..")
-            player_is_in_good_pos = True
+            player_is_in_good_pos = 1
         elif player_test_result < monster_test_result:
             print("L'enemie prend l'avantage dans l'échange..")
-            player_is_in_good_pos = False
+            player_is_in_good_pos = 2
         else:
             print("Personne n'a pris l'avantage dans cette échange.")
-            player_is_in_good_pos = False
+            player_is_in_good_pos = 3
         print("")
         print("    - touche [Entrer]: continuer")
         if self.player.luck > 0:
             print("    - 'chance' : tenter votre chance et ", end="")
-            if player_is_in_good_pos:
+            if player_is_in_good_pos == 1:
                 print("essayer de porter un coup puissant")
-            else:
+            elif player_is_in_good_pos == 2:
                 print("essayer de diminuer l'impacte")
-        return player_is_in_good_pos
+            else:
+                pass
+
+    def apply_result(self,):
+        pass
 
     def combat_loop(self):
         self.next_turn()
         while self.fight_is_going():
             valid_input, choice = self.input_is_valid(input(" > "))
             if valid_input:
-                if choice == 2:
-                    # self.player.get_lucky()
+                if choice == 2: # use 'chance' commmand
+                    #is_lucky = self.player.get_lucky()
                     pass
+                #self.apply_result(is_lucky)
                 self.next_turn()
 
     def start(self):
