@@ -1,15 +1,18 @@
 {
     "id": "001",
-    "text": "Vous apperssevez des goblins pas très malins qui vous tendent une embuscade au loin.",
+    "text": "Le soleil se couche ; et tandis que l'obscurité s'installe,\nvous entreprenez l'escalade de la montagne en direction\nde la silhouette menaçante qui se dresse dans la nuit.\nLa Citadelle du Chaos se trouve à moins d'une heure de marche.\nÀ quelques distance des ramparts, vous vous arrêtez\npour vous reposer et la Citadelle vous semble alors\nun immense et redoutable fantôme auquel il serait\nimpossible d'échapper. Vous contemplez cette masse\nimposante et un frisson de peur vous parcourt l'échine.\nVous avez honte cepandant d'éprouver cette crainte et,\n avec une froide détermination, vous continuez à grim-\nper jusqu'au portail d'entrée dont vous savez qu'il est\nsurveillé par des gardes. En même temps, vous réflé-\nchissez à ce que vous allez dire. Vous avez pensé à vous\nprésenter comme un marchand ou un artisan - un char-\npentier par exemple. Vous pourriez même vous prétendre\nun vagabond en quête d'un abri pour la nuit.\nTout en réfléchissant à ces trois mensonges, vous attei-\nngez le sentier qui mène au portail. Deux flambeaux\nbrûlent de chaque côté de la herse.\nÀ mesure que vous avancez, vous percevez des grogne-\nments étouffés et vous distinguez bientôt deux créatures\nhybrides. À gauche, il s'agit d'un animal repoussant à\nla tête de chien posée sur un corps de grand singe. Du\ncôté opposé se tient son contraire : un monstre à tête\nde singe et au corps de molosse. Ce dernier s'avance\nvers vous, s'arrête à quelques mètres, puis, se dressant\nsur ses pattes de derrière, vous demande qui vous êtes.\nQu'allez-vous choisir de faire ?",
     "choices": [
         {
-            "text":"Combatre les goblins",
-            "next":"002",
-            "combat":["Goblin",10,10,2,[]]
+            "text":"Prétendre être un herboriste",
+            "next":"261"
         },
         {
-            "text":"Essayer de les monté les uns contre les autres",
-            "next":"003"
+            "text":"Vous faire passer pour un marchand",
+            "next":"230"
+        },
+        {
+            "text":"Demander l'hospitalité pour la nuit",
+            "next":"020"
         }
     ]
 }

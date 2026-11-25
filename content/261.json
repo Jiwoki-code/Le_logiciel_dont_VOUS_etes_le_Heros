@@ -1,0 +1,18 @@
+{
+    "id": "261",
+    "text": "Le Singe-Chien demande à voir les plantes que vous\nêtes censé transporter avec vous. Par chance, vous avez\narraché quelques touffes d'herbe en chemin, et vous\nles lui montrez. Penchant la tête de côté, la créature\nvous examine avec méfiance et vous demande le nom\ndu garde que vous êtes venu guérir. Vous êtes pris au\ndépourvu et il vous faut vite penser à un nom pour\ntromper la sentinelle. Vous avez le choix entre :",
+    "choices": [
+        {
+            "text":"Kylltrog",
+            "next":"081"
+        },
+        {
+            "text":"Pincus",
+            "next":"175"
+        },
+        {
+            "text":"Blag",
+            "next":"394"
+        }
+    ]
+}

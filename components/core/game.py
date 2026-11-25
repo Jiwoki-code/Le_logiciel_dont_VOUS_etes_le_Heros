@@ -20,15 +20,20 @@ class Game:
         # ressources
         self.HELP_FILE, self.CHEAT_FILE, self.ERROR_FILE = JSON_file.GET_BASIC_FILES()
 
+    def apply_conditions(self, conditions):
+        pass
+
     def apply_choice(self, player_input:int): # interpret choices possibilites: battle, conditional choices, magic
-        next_event_id =  self.current_event.choices[player_input-1]["next"]
-        new_event = JSON_file.load_JSON(next_event_id)
-        
         if "combat" in self.current_event.choices[player_input-1]:
             monster = self.current_event.choices[player_input-1]["combat"]
             self.combat=Combat(self.player,Monster(monster[0],monster[1],monster[2],monster[3],monster[4]))
             self.state="combat"
-        # else
+
+        if "conditions" in self.current_event.choices[player_input-1]:
+            self.apply_conditions(self.current_event.choices[player_input-1]["conditions"])
+            
+        next_event_id =  self.current_event.choices[player_input-1]["next"]
+        new_event = JSON_file.load_JSON(next_event_id)
         self.current_event = new_event
         self.current_event.display()
 

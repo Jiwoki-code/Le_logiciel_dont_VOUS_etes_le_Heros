@@ -1,0 +1,16 @@
+{
+    "id": "000",
+    "text": "",
+    "choices": [
+        {
+            "text":"",
+            "next":"000",
+            "combat":["monster name", "hab","end","damages","loot"]
+        },
+        {
+            "text":"",
+            "next":"000",
+            "conditions":[]
+        }
+    ]
+}

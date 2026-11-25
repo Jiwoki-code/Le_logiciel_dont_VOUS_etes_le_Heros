@@ -35,17 +35,17 @@ class Combat:
         monster_test_result = self.enemy.habilite + monster_habilite_test
         is_in_good_pos:int
 
-        #time.sleep(.7)
+        time.sleep(.7)
         print(f"Vous lancez les dées et réalisez {player_habilite_test} à votre test d'habilité!")
-        #time.sleep(.7)
+        time.sleep(.7)
         print(".")
-        #time.sleep(.7)
+        time.sleep(.7)
         print(".")
-        #time.sleep(.7)
+        time.sleep(.7)
         print(f"L'enemie réalise {monster_habilite_test} à son test d'habilité!!")
-        #time.sleep(.7)
+        time.sleep(.7)
         print("")
-        #time.sleep(.7)
+        time.sleep(.7)
         print(self.player.name + "  " + str(self.player.habilite) + " + " + str(player_habilite_test) + " = " + str(player_test_result) + " /contre/ " + str(monster_test_result) + " = " + str(self.enemy.habilite) + " + " + str(monster_habilite_test) + "  " + self.enemy.name)
         print("")
         if monster_test_result < player_test_result:
